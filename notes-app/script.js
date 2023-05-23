@@ -1,15 +1,6 @@
-const menuBtnElement = document.getElementById('menu-btn');
 const addBtnElement = document.getElementById('add-btn');
-const settingsBtnElement = document.getElementById('settings-btn');
-const trashBtnElement = document.getElementById('trash-btn')
-
-const notesTextElement = document.querySelector('.notes-text')
-const notesBoxElement = document.querySelector('.notes-box');
-const textAreaElement = document.querySelector('textarea')
-const inputHeaderElement = document.querySelector('input')
-
-const bodyElement = document.querySelector('body')
-
+const bodyElement = document.querySelector('.main-body')
+const savedWindow = document.querySelector('.saved-window')
 //TODO: add the functionality for settings button so that if we click it, we get an option of checkboxes where we select multiple notes and simultaneously delete them.
 
 if (localStorage.getItem('notes') == null) {
@@ -32,58 +23,93 @@ notesContainerElementInnerHtml = `
     <div class="notes-text">
         <div class="notes-box">
             <div class="notes-header">
-                <input type="text">
+                <input type="text" placeholder="title">
                 <!-- <button> add </button> -->
             </div>
-            <textarea name="notes" id="notes" cols="30" rows="14"></textarea>
+            <textarea name="notes" id="notes" cols="30" rows="14" placeholder="Type here..."></textarea>
         </div>
     </div>
 `;
 
+fetchNotes()
 
-addBtnElement.addEventListener('click', () => {
 
-    const noteElement = document.createElement('div')
-    noteElement.className = 'notes-container'
+function helper(...args) {
+    const noteElement = document.createElement('div');
     
-    const noteId = `${Date.now()}`
-    noteElement.id = `${noteId}`
-    noteElement.innerHTML = notesContainerElementInnerHtml
+    let noteId = `${args[0]}`;
+    noteElement.id = `${noteId}`;
+    noteElement.className = 'notes-container';
+    noteElement.innerHTML = notesContainerElementInnerHtml;
 
-    bodyElement.appendChild(noteElement)
+    bodyElement.appendChild(noteElement);
 
     const saveBtnElement = noteElement.querySelector('#save-btn');
-    const deleteBtnElement = noteElement.querySelector('#delete-btn')
+    const deleteBtnElement = noteElement.querySelector('#delete-btn');
 
-    const titleElement = noteElement.querySelector('input')
-    const textAreaElement = noteElement.querySelector('textarea')
+    const titleElement = noteElement.querySelector('input');
+    const textAreaElement = noteElement.querySelector('textarea');
 
-    saveBtnElement.addEventListener('click', () => {       
+    titleElement.value = args[1].header;
+    textAreaElement.value = args[1].body;
+
+    saveBtnElement.addEventListener('click', () => {
         const note = {
-            'header': titleElement.value,
-            'body': textAreaElement.value,
+            header: titleElement.value,
+            body: textAreaElement.value,
         };
 
-        let allNotes = getAllNotes();
-        // console.log(typeof(allNotes))
+        let allNotes = getAllNotesLS();
         allNotes.set(noteId, note);
-        localStorage.setItem("notes", JSON.stringify(Array.from(allNotes)) )
-        console.log(localStorage.getItem("notes"))
-    })
+        localStorage.setItem('notes', JSON.stringify(Array.from(allNotes)));
+
+        displaySavedMessage()
+    });
 
     deleteBtnElement.addEventListener('click', () => {
-        bodyElement.removeChild(noteElement)
-        
-        let allNotes = getAllNotes();        
-        allNotes.delete(noteId)
+        let allNotes = getAllNotesLS();
+        allNotes.delete(noteId);
         localStorage.setItem('notes', JSON.stringify(Array.from(allNotes)));
-        console.log(localStorage.getItem('notes'))
-    })
 
+        bodyElement.removeChild(noteElement)
+    });
+}
+
+
+addBtnElement.addEventListener('click', () => {
+    let x = {header:'', body:''}
+    helper(Date.now(), x)
 });
 
+function fetchNotes() {
+    let allNotes = getAllNotesLS();
+    for (let [key, value] of allNotes.entries()) {
+        helper(key, value)
+    }
+}
 
-function getAllNotes() {
+function getAllNotesLS() {
     const allNotes = JSON.parse(localStorage.getItem('notes'));
     return (allNotes == null ? (new Map()) : new Map(allNotes) );
+}
+
+// function tempAlert(msg, duration) {
+//     var el = document.createElement('div');
+//     el.setAttribute(
+//         'style',
+//         'position:absolute;top:40%;left:20%;background-color:white;'
+//     );
+//     el.innerHTML = msg;
+//     setTimeout(function () {
+//         el.parentNode.removeChild(el);
+//     }, duration);
+//     document.body.appendChild(el);
+// }
+
+function displaySavedMessage() {
+    savedWindow.style.display = 'block';
+    setTimeout(function () {
+        savedWindow.style.display = 'none';
+    }, 1000)
+    
 }

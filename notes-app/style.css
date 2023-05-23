@@ -3,6 +3,7 @@
 }
 
 body {
+    position: relative;
     background-color: #7BDAF3;
     font-family: sans-serif;
     padding: 20px;
@@ -13,6 +14,7 @@ body {
     min-height: 400px;
     width: 400px;
     padding: 18px 30px 18px 30px;
+    margin: 10px 10px 10px 10px;
 }
 
 .header {
@@ -67,6 +69,12 @@ textarea {
     margin-bottom: 10px;
 }
 
+.main-body {
+    display: flex;
+    flex-wrap: wrap;
+    /* overflow-x: wrap; */
+}
+
 input{
     border: none;
 }
@@ -74,4 +82,22 @@ input{
 button{
     border: none;
     cursor: pointer;
+}
+
+.saved-window {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left:auto;
+    margin-right: auto;
+    width: 300px;
+    height: 40px;
+    padding: 10px;
+    background-color: rgb(18, 255, 18);
+    border-radius: 5px;
+    color: rgb(22, 22, 22);
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 0.0000001px solid black;
+    display: none;
 }
