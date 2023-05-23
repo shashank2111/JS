@@ -1,0 +1,89 @@
+body {
+    background-color: rgb(245, 244, 255)
+}
+
+.main-box {
+    background-color: white;
+    max-width: 550px;
+    min-height: 390px;
+    margin: auto;
+    margin-top:240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;
+    border-radius: 5px;
+    justify-content: space-between;
+}
+
+.upper {
+    height: 75%;
+    width: 100%;
+    margin: 0;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: solid 1px black; */
+}
+
+.question {
+    /* border: solid black 1px; */
+    width: 100%;
+    margin: 0 0 0 0;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.question > p {
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+
+.options {
+    /* border: solid black 1px; */
+    /* margin-top:20px; */
+    margin: 0 10px 0 5px;
+    width: 100%;
+}
+
+input[type="radio"] {
+    /* appearance: none; */
+    background-color: #fff;
+    margin-left: 50px;
+    margin-top: 18px;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 50%;
+}
+
+.options-text {
+    font-size:20px;
+}
+
+.lower {
+    /* border: solid black 1px; */
+    border-radius: 0 0 5px 5px;
+    height: 20%;
+    min-height: 60px;
+    width: 100%;
+    background-color: rgb(149, 149, 247);
+    margin: 0;
+    margin-top: 30px;
+    padding: 0;
+    text-align: center;   
+    border: none;
+}
+.lower > p {
+    font-size:1.20rem;
+    color:white;
+}
+
+button:hover {
+    background-color:blue
+}

@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("./snow.jpg");
+    background-size: cover;
+    background-position: center center;
+    min-height: 100vh;
+    margin: 0;
+    /* font-family: sans-serif; */
+}
+
+.main-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-weight: normal;
+    font-size: 3rem;
+    margin-top: 8rem;
+    margin-bottom: 2rem;
+}
+
+.countdown-container {
+    display: flex;
+    /* margin-left: 40%; */
+    /* margin-right: 40%; */
+    /* margin: 0 40% 0 40%; */
+    justify-content:space-between;
+
+}
+
+.countdown-el {
+    text-align: center;
+    margin: 0 1.5rem;
+}
+
+.big-text {
+    font-weight: bold;
+    font-size:3rem;
+    line-height: 1;
+    margin: 0;
+}
+
+.countdown-el span {
+    font-size: 1.25rem;
+}

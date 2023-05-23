@@ -1,0 +1,34 @@
+[
+    {
+        "question": "Which language is most popular?",
+        "a": "Java",
+        "b": "Python",
+        "c": "C",
+        "d": "Go",
+        "correct": "b"
+    },
+    {
+        "question": "Which of the following is an example of OS?",
+        "a": "Apache",
+        "b": "Docker",
+        "c": "Linux",
+        "d": "Kotlin",
+        "correct": "c"
+    },
+    {
+        "question": "Which year was javascript launched?",
+        "a": "2001",
+        "b": "2002",
+        "c": "2004",
+        "d": "2005",
+        "correct": "d"
+    },
+    {
+        "question": "Where is Mt. Everest located?",
+        "a": "India",
+        "b": "Pakistan",
+        "c": "China",
+        "d": "Nepal",
+        "correct": "d"
+    }
+]
