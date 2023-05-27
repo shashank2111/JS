@@ -1,0 +1,139 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #eaeaeafe;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.todo-body{
+    margin: 0 auto;
+    width: 500px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;
+        -moz-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px;
+        box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 6px;
+}
+
+.todos-text {
+  margin: 0;
+  font-size: 6rem;
+  /* font-weight: bold; */
+  color: rgba(187, 187, 187, 0.942);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.app-header {
+    /* border: 1px solid black; */
+    padding: 10px 0 10px 0;
+}
+
+.todo-input {
+    width: 480px;
+    height: 50px;
+    padding: 0 10px;
+    font-size: 1.3rem;
+    outline: none;
+    border: 0.1px solid rgb(112, 112, 112);
+}
+
+.todo-task {
+    width: 500px;
+    height: 50px;
+    border: 0.1px solid rgb(189, 189, 189);
+    background-color:white;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.todo-task-left {
+    display: flex;
+}
+
+.todo-circle {
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    border: 0.5px solid rgb(135, 135, 135);
+    margin: 10px 15px 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-striken {
+    text-decoration: line-through;
+}
+
+.fa-times {
+    margin: 16px 12px 0 0;
+}
+
+.control {
+    width: 500px;
+    height: 50px;
+    border: 1px solid rgb(189, 189, 189);
+    background-color: white;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.control-buttons {
+    /* height: 30px; */
+    margin: 0 10px 0 10px;
+    padding: 5px 3px 5px 3px ;
+    border: 0.1px solid rgb(195, 195, 195);
+    border-radius: 3px ;
+    cursor: pointer;
+}
+
+.control-buttons:hover {
+    background-color:rgb(255, 230, 230)
+}
+
+/* .control-buttons:active { */
+    /* border: 0.1px solid rgb(195, 195, 195); */
+/* } */
+
+.control-buttons-left {
+    margin-left: 10px;
+}
+
+.control-buttons-right {
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.current {
+    background-color: rgb(255, 157, 157)
+}
+
+.todo-circle-inner {
+    display: hidden;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    /* border: 1px solid black; */
+    background-color: rgb(128, 128, 128);
+}
+
+.todo-name {
+    font-size: 1.4rem;
+}
+
+.todo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+}
