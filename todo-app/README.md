@@ -1,3 +1,8 @@
+# ToDo App 
+This app is built to note down the ToDos and then manahge your work.
+Uses React framework and is completely front-end project.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
